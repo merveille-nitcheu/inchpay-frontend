@@ -3,12 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+import "./style/flexboxgrid.min.css";
+import './style/index.css';
+import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/saga-orange/theme.css';
+import { ThemeProvider } from '@mui/material/styles';
+import Theme from './Theme';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ThemeProvider theme={Theme}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </ThemeProvider>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
